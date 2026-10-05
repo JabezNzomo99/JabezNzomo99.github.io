@@ -81,10 +81,20 @@ h4 { margin-top: 0; }
 }
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: grid;
   grid-template-columns: var(--profile-width) minmax(0, 1fr);
   gap: var(--gutter);
+  /* Opaque so content scrolls underneath rather than showing through. */
+  background: var(--paper);
   padding: 32px 0 22px;
+}
+
+/* Keep a section heading clear of the sticky header when jumped to by anchor. */
+section[id] {
+  scroll-margin-top: 92px;
 }
 
 .site-name {
@@ -417,6 +427,7 @@ main { min-width: 0; }
 .paper-mark.mark-grey,     .talk-mark.mark-grey     { background: #eef1f5; }
 .paper-mark.mark-yellow,   .talk-mark.mark-yellow   { background: #fdf7e3; }
 .paper-mark.mark-lavender, .talk-mark.mark-lavender { background: var(--accent-soft); }
+.paper-mark.mark-teal,     .talk-mark.mark-teal     { background: #e4f2f1; }
 /* For a dark-ground slide, so letterbox bars match the image instead of
    framing it in a pale colour. */
 .paper-mark.mark-dark,     .talk-mark.mark-dark     { background: #303030; }
