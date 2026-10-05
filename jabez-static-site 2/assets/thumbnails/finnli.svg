@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 136 136" width="136" height="136" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+  <title id="title">Compact FinNLI pipeline animation</title>
+  <desc id="desc">Looping five-stage flow: financial sources, LLM pair generation, Z-filtering, NLI scoring, and human curation with feedback.</desc>
+  <style>
+    .line{fill:none;stroke:#94a3b8;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round;opacity:.52}
+    .loop{stroke-dasharray:3 3}
+    .node{transform-box:fill-box;transform-origin:center;opacity:.68}
+    .halo{fill:none;stroke:#2563eb;stroke-width:1.4;opacity:0;transform-box:fill-box;transform-origin:center}
+    .label{font-family:Arial,Helvetica,sans-serif;fill:#1f2937;text-anchor:middle;font-weight:700;font-size:8.2px;letter-spacing:.2px}
+    .sub{font-family:Arial,Helvetica,sans-serif;fill:#64748b;text-anchor:middle;font-weight:600;font-size:5.5px}
+    .packet{fill:#2563eb}
+
+    .n1{animation:n1 6.5s infinite ease-in-out}.n2{animation:n2 6.5s infinite ease-in-out}.n3{animation:n3 6.5s infinite ease-in-out}.n4{animation:n4 6.5s infinite ease-in-out}.n5{animation:n5 6.5s infinite ease-in-out}
+    .h1{animation:h1 6.5s infinite ease-in-out}.h2{animation:h2 6.5s infinite ease-in-out}.h3{animation:h3 6.5s infinite ease-in-out}.h4{animation:h4 6.5s infinite ease-in-out}.h5{animation:h5 6.5s infinite ease-in-out}
+
+    @keyframes n1{0%,12%{opacity:1;transform:scale(1.08)}18%,100%{opacity:.68;transform:scale(1)}}
+    @keyframes n2{0%,14%{opacity:.68;transform:scale(1)}20%,30%{opacity:1;transform:scale(1.08)}36%,100%{opacity:.68;transform:scale(1)}}
+    @keyframes n3{0%,32%{opacity:.68;transform:scale(1)}38%,48%{opacity:1;transform:scale(1.08)}54%,100%{opacity:.68;transform:scale(1)}}
+    @keyframes n4{0%,50%{opacity:.68;transform:scale(1)}56%,66%{opacity:1;transform:scale(1.08)}72%,100%{opacity:.68;transform:scale(1)}}
+    @keyframes n5{0%,68%{opacity:.68;transform:scale(1)}74%,88%{opacity:1;transform:scale(1.08)}94%,100%{opacity:.68;transform:scale(1)}}
+
+    @keyframes h1{0%,12%{opacity:.82;transform:scale(1.1)}18%,100%{opacity:0;transform:scale(1)}}
+    @keyframes h2{0%,14%{opacity:0}20%,30%{opacity:.82;transform:scale(1.1)}36%,100%{opacity:0;transform:scale(1)}}
+    @keyframes h3{0%,32%{opacity:0}38%,48%{opacity:.82;transform:scale(1.1)}54%,100%{opacity:0;transform:scale(1)}}
+    @keyframes h4{0%,50%{opacity:0}56%,66%{opacity:.82;transform:scale(1.1)}72%,100%{opacity:0;transform:scale(1)}}
+    @keyframes h5{0%,68%{opacity:0}74%,88%{opacity:.82;transform:scale(1.1)}94%,100%{opacity:0;transform:scale(1)}}
+
+    .stage1{opacity:1;animation:t1 6.5s infinite step-end}.stage2,.stage3,.stage4,.stage5{opacity:0}
+    .stage2{animation:t2 6.5s infinite step-end}.stage3{animation:t3 6.5s infinite step-end}.stage4{animation:t4 6.5s infinite step-end}.stage5{animation:t5 6.5s infinite step-end}
+    @keyframes t1{0%,17%{opacity:1}18%,100%{opacity:0}}
+    @keyframes t2{0%,17%{opacity:0}18%,35%{opacity:1}36%,100%{opacity:0}}
+    @keyframes t3{0%,35%{opacity:0}36%,53%{opacity:1}54%,100%{opacity:0}}
+    @keyframes t4{0%,53%{opacity:0}54%,71%{opacity:1}72%,100%{opacity:0}}
+    @keyframes t5{0%,71%{opacity:0}72%,100%{opacity:1}}
+
+    @media (prefers-reduced-motion:reduce){.node,.halo,.stage1,.stage2,.stage3,.stage4,.stage5{animation:none!important}.node{opacity:1}.halo{opacity:0}.stage1{opacity:1}.stage2,.stage3,.stage4,.stage5{opacity:0}.packet{display:none}}
+  </style>
+
+  <!-- Main clockwise flow -->
+  <path id="flowPath" class="line" d="M22 28 C42 13 76 12 98 30 C121 49 119 82 98 103 C76 122 43 120 22 102 C2 83 1 49 22 28"/>
+
+  <!-- Human feedback loop back toward generation -->
+  <path class="line loop" d="M35 91 C16 76 13 49 29 32 C39 21 50 16 59 15"/>
+  <path class="line" d="M57 12 L61 15 L57 18"/>
+
+  <!-- Moving packet -->
+  <circle class="packet" r="2.35">
+    <animateMotion dur="6.5s" repeatCount="indefinite" rotate="auto">
+      <mpath xlink:href="#flowPath"/>
+    </animateMotion>
+  </circle>
+
+  <!-- 1. Sources -->
+  <g transform="translate(22 28)">
+    <circle class="halo h1" r="16.5"/>
+    <g class="node n1">
+      <rect x="-9" y="-10" width="11" height="15" rx="1.5" fill="#f3be82" stroke="#9a673e" stroke-width=".8"/>
+      <rect x="-4" y="-6" width="11" height="15" rx="1.5" fill="#c7de7d" stroke="#789348" stroke-width=".8"/>
+      <rect x="1" y="-2" width="11" height="15" rx="1.5" fill="#f3b7b7" stroke="#ad7474" stroke-width=".8"/>
+      <path d="M7 -2v4h4" fill="none" stroke="#ad7474" stroke-width=".75"/>
+    </g>
+  </g>
+
+  <!-- 2. LLM generation -->
+  <g transform="translate(68 18)">
+    <circle class="halo h2" r="15.5"/>
+    <g class="node n2">
+      <rect x="-10" y="-8" width="20" height="16" rx="4" fill="#dbeafe" stroke="#4f78b5" stroke-width="1"/>
+      <circle cx="-4" cy="-1" r="2" fill="#7fb3ff" stroke="#4f78b5" stroke-width=".65"/>
+      <circle cx="4" cy="-1" r="2" fill="#7fb3ff" stroke="#4f78b5" stroke-width=".65"/>
+      <path d="M-4 4h8M-2 4v-2M2 4v-2M0-8v-4M-2-12h4" fill="none" stroke="#4f78b5" stroke-width=".85" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 3. Z-filter -->
+  <g transform="translate(112 49)">
+    <circle class="halo h3" r="15.5"/>
+    <g class="node n3">
+      <path d="M-11 -9H11L4-1V7L-4 11V-1Z" fill="#ede2fb" stroke="#8d70b0" stroke-width="1.05" stroke-linejoin="round"/>
+      <path d="M-6-5H6" stroke="#8d70b0" stroke-width=".95"/>
+    </g>
+  </g>
+
+  <!-- 4. General NLI model -->
+  <g transform="translate(96 104)">
+    <circle class="halo h4" r="16.5"/>
+    <g class="node n4">
+      <rect x="-13" y="-9" width="26" height="18" rx="5" fill="#dbeafe" stroke="#4f78b5" stroke-width="1"/>
+      <circle cx="-6" cy="-3" r="1.55" fill="#1f2937"/><circle cx="0" cy="0" r="1.55" fill="#1f2937"/><circle cx="6" cy="-4" r="1.55" fill="#1f2937"/>
+      <circle cx="-5" cy="4" r="1.55" fill="#1f2937"/><circle cx="6" cy="4" r="1.55" fill="#1f2937"/>
+      <path d="M-4.5-2.5L-1.3-.6M1.3-.7L4.6-3.1M-3.8 3.2L-1.3.8M1.4.8L4.7 3.3" stroke="#1f2937" stroke-width=".7"/>
+    </g>
+  </g>
+
+  <!-- 5. Expert + human curation -->
+  <g transform="translate(35 105)">
+    <circle class="halo h5" r="17.5"/>
+    <g class="node n5">
+      <circle cx="-4.5" cy="-6" r="4" fill="#f4c6a4" stroke="#8c6a53" stroke-width=".75"/>
+      <circle cx="4" cy="-5" r="4" fill="#e9b895" stroke="#8c6a53" stroke-width=".75"/>
+      <path d="M-10 8c0-5.5 3-9 6.5-9S3 2.5 3 8" fill="#ffe1e1" stroke="#b66e6e" stroke-width=".9"/>
+      <path d="M0 8c0-5.5 3-9 6.5-9S13 2.5 13 8" fill="#dff1d8" stroke="#6d9b62" stroke-width=".9"/>
+      <path d="M11-10c5 3 5 9 0 12M11 2l3-1-1-3" fill="none" stroke="#245878" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Center status -->
+  <g transform="translate(68 65)">
+    <circle r="23" fill="#ffffff" fill-opacity=".96" stroke="#e2e8f0" stroke-width="1"/>
+    <g class="stage1"><text class="label" y="-1">SOURCE</text><text class="sub" y="9">financial text</text></g>
+    <g class="stage2"><text class="label" y="-1">GENERATE</text><text class="sub" y="9">NLI pairs</text></g>
+    <g class="stage3"><text class="label" y="-1">FILTER</text><text class="sub" y="9">Z-filtering</text></g>
+    <g class="stage4"><text class="label" y="-1">SCORE</text><text class="sub" y="9">NLI model</text></g>
+    <g class="stage5"><text class="label" y="-1">CURATE</text><text class="sub" y="9">human feedback</text></g>
+  </g>
+</svg>
