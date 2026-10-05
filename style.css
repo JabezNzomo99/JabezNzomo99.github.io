@@ -428,6 +428,7 @@ main { min-width: 0; }
 .paper-mark.mark-yellow,   .talk-mark.mark-yellow   { background: #fdf7e3; }
 .paper-mark.mark-lavender, .talk-mark.mark-lavender { background: var(--accent-soft); }
 .paper-mark.mark-teal,     .talk-mark.mark-teal     { background: #e4f2f1; }
+.paper-mark.mark-navy,     .talk-mark.mark-navy     { background: #0d1b2a; }
 /* For a dark-ground slide, so letterbox bars match the image instead of
    framing it in a pale colour. */
 .paper-mark.mark-dark,     .talk-mark.mark-dark     { background: #303030; }
