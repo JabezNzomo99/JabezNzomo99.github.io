@@ -206,7 +206,8 @@ section[id] {
 .icon-link svg,
 .resource-link svg,
 .paper-mark svg,
-.talk-mark svg {
+.talk-mark svg,
+.news-mark svg {
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
@@ -600,10 +601,17 @@ main { min-width: 0; }
   object-fit: contain;
 }
 
-.news-mark-paper     { background: #e9eefc; }
-.news-mark-award     { background: #fcebf1; }
-.news-mark-community { background: #fdf3e2; }
-.news-mark-role      { background: #e9f3ec; }
+.news-mark svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 2;
+}
+
+/* Each chip pairs a pale ground with a deeper ink of the same hue. */
+.news-mark-paper     { background: #e9eefc; color: #2f4fb0; }
+.news-mark-award     { background: #fcebf1; color: #b0356b; }
+.news-mark-community { background: #fdf3e2; color: #a2661a; }
+.news-mark-role      { background: #e9f3ec; color: #2f7a4d; }
 .news-mark-logo      { background: var(--surface); border: 1px solid var(--frame-line); }
 
 .news-text {
